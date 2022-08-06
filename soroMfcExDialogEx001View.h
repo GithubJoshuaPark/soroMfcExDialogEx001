@@ -7,8 +7,9 @@
 #include "CDlgForListCtrl.h"
 #include "CDlgHasUserClass.h"
 
-#define ID_BTN01 1234
-#define ID_BTN02 1235
+#define ID_BTN01 12345
+#define ID_BTN02 12346
+#define ID_CHECK_BTN01 12347
 
 class CsoroMfcExDialogEx001View : public CView
 {
@@ -24,6 +25,8 @@ public:
 public:
 	CButton m_btn;
 	CButton m_btn2;
+	CButton m_check;  // for enable/disable m_btn
+
 	CDlgForListCtrl m_CDlgForListCtrl;
 	CDlgHasUserClass m_CDlgHasUserClass;
 
@@ -52,10 +55,12 @@ protected:
 public:
 	virtual BOOL Create(LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwStyle, const RECT& rect, CWnd* pParentWnd, UINT nID, CCreateContext* pContext = NULL);
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
+	
 private:
 	void BtnClick();
 	void Btn2Click();
-};
+	void BtnChecked();
+};  
 
 #ifndef _DEBUG  // debug version in soroMfcExDialogEx001View.cpp
 inline CsoroMfcExDialogEx001Doc* CsoroMfcExDialogEx001View::GetDocument() const

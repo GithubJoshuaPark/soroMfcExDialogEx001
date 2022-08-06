@@ -30,6 +30,7 @@ BEGIN_MESSAGE_MAP(CsoroMfcExDialogEx001View, CView)
 	ON_WM_CREATE()
 	ON_COMMAND(ID_BTN01, &CsoroMfcExDialogEx001View::BtnClick)
 	ON_COMMAND(ID_BTN02, &CsoroMfcExDialogEx001View::Btn2Click)
+	ON_COMMAND(ID_CHECK_BTN01, &CsoroMfcExDialogEx001View::BtnChecked)
 END_MESSAGE_MAP()
 
 // CsoroMfcExDialogEx001View construction/destruction
@@ -124,17 +125,31 @@ int CsoroMfcExDialogEx001View::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		return -1;
 
 	// TODO:  Add your specialized creation code here
+
+	HICON hIcon[] = {
+		(HICON)LoadImage(AfxGetApp()->m_hInstance, MAKEINTRESOURCE(IDI_ICON1), IMAGE_ICON, 48, 48, LR_DEFAULTCOLOR),
+		(HICON)LoadImage(AfxGetApp()->m_hInstance, MAKEINTRESOURCE(IDI_ICON2), IMAGE_ICON, 48, 48, LR_DEFAULTCOLOR)
+	};
+
 	m_btn.Create(_T("CDlgForListCtrl"),
-		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_ICON,
 		CRect(150, 40, 300, 150),
 		this,
 		ID_BTN01);
+	m_btn.SetIcon(hIcon[0]);
+
+	m_check.Create(_T("Enable/Disable"),
+		WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
+		CRect(150, 160, 300, 200),
+		this,
+		ID_CHECK_BTN01);
 
 	m_btn2.Create(_T("CDlgHasUser"),
-		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_ICON,
 		CRect(300, 40, 450, 150),
 		this,
 		ID_BTN02);
+	m_btn2.SetIcon(hIcon[1]);
 
 	return 0;
 }
@@ -154,4 +169,21 @@ void CsoroMfcExDialogEx001View::Btn2Click()
 	//AfxMessageBox(_T("God will make a way"));
 
 	m_CDlgHasUserClass.DoModal();
+}
+
+void CsoroMfcExDialogEx001View::BtnChecked()
+{
+	// TODO: Add your control notification handler code here
+	int li_status = m_check.GetCheck();
+	switch (li_status)
+	{
+	case BST_CHECKED:
+		m_btn.EnableWindow(false);
+		break;
+	case BST_UNCHECKED:
+		m_btn.EnableWindow(true);
+		break;
+	default:
+		break;
+	}
 }
