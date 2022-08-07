@@ -30,6 +30,8 @@ BEGIN_MESSAGE_MAP(CsoroMfcExDialogEx001View, CView)
 	ON_WM_CREATE()
 	ON_COMMAND(ID_BTN01, &CsoroMfcExDialogEx001View::BtnClick)
 	ON_COMMAND(ID_BTN02, &CsoroMfcExDialogEx001View::Btn2Click)
+	ON_COMMAND(ID_BTN03, &CsoroMfcExDialogEx001View::Btn3Click)
+	ON_COMMAND(ID_BTN04, &CsoroMfcExDialogEx001View::Btn4Click)
 	ON_COMMAND(ID_CHECK_BTN01, &CsoroMfcExDialogEx001View::BtnChecked)
 END_MESSAGE_MAP()
 
@@ -108,17 +110,6 @@ CsoroMfcExDialogEx001Doc* CsoroMfcExDialogEx001View::GetDocument() const // non-
 
 
 // CsoroMfcExDialogEx001View message handlers
-
-
-BOOL CsoroMfcExDialogEx001View::Create(LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwStyle, const RECT& rect, CWnd* pParentWnd, UINT nID, CCreateContext* pContext)
-{
-	// TODO: Add your specialized code here and/or call the base class
-
-
-	return CView::Create(lpszClassName, lpszWindowName, dwStyle, rect, pParentWnd, nID, pContext);
-}
-
-
 int CsoroMfcExDialogEx001View::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
 	if (CView::OnCreate(lpCreateStruct) == -1)
@@ -128,7 +119,9 @@ int CsoroMfcExDialogEx001View::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 	HICON hIcon[] = {
 		(HICON)LoadImage(AfxGetApp()->m_hInstance, MAKEINTRESOURCE(IDI_ICON1), IMAGE_ICON, 48, 48, LR_DEFAULTCOLOR),
-		(HICON)LoadImage(AfxGetApp()->m_hInstance, MAKEINTRESOURCE(IDI_ICON2), IMAGE_ICON, 48, 48, LR_DEFAULTCOLOR)
+		(HICON)LoadImage(AfxGetApp()->m_hInstance, MAKEINTRESOURCE(IDI_ICON2), IMAGE_ICON, 48, 48, LR_DEFAULTCOLOR),
+		(HICON)LoadImage(AfxGetApp()->m_hInstance, MAKEINTRESOURCE(IDI_ICON3), IMAGE_ICON, 48, 48, LR_DEFAULTCOLOR),
+		(HICON)LoadImage(AfxGetApp()->m_hInstance, MAKEINTRESOURCE(IDI_ICON4), IMAGE_ICON, 48, 48, LR_DEFAULTCOLOR)
 	};
 
 	m_btn.Create(_T("CDlgForListCtrl"),
@@ -151,6 +144,20 @@ int CsoroMfcExDialogEx001View::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		ID_BTN02);
 	m_btn2.SetIcon(hIcon[1]);
 
+	m_btn3.Create(_T("CV Using SysImg"),
+		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_ICON,
+		CRect(450, 40, 600, 150),
+		this,
+		ID_BTN03);
+	m_btn3.SetIcon(hIcon[2]);
+
+	m_btn4.Create(_T("CDlgMyTrCtl"),
+		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_ICON,
+		CRect(600, 40, 750, 150),
+		this,
+		ID_BTN04);
+	m_btn4.SetIcon(hIcon[3]);
+
 	return 0;
 }
 
@@ -171,6 +178,22 @@ void CsoroMfcExDialogEx001View::Btn2Click()
 	m_CDlgHasUserClass.DoModal();
 }
 
+void CsoroMfcExDialogEx001View::Btn3Click()
+{
+	// TODO: Add your implementation code here.
+	//AfxMessageBox(_T("God will make a way"));
+
+	m_CListCtrlUsingSysImages.DoModal();
+}
+
+void CsoroMfcExDialogEx001View::Btn4Click()
+{
+	// TODO: Add your implementation code here.
+	//AfxMessageBox(_T("God will make a way"));
+
+	m_CDlgMyTrCtl.DoModal();
+}
+
 void CsoroMfcExDialogEx001View::BtnChecked()
 {
 	// TODO: Add your control notification handler code here
@@ -179,9 +202,15 @@ void CsoroMfcExDialogEx001View::BtnChecked()
 	{
 	case BST_CHECKED:
 		m_btn.EnableWindow(false);
+		m_btn2.EnableWindow(false);
+		m_btn3.EnableWindow(false);
+		m_btn4.EnableWindow(false);
 		break;
 	case BST_UNCHECKED:
 		m_btn.EnableWindow(true);
+		m_btn2.EnableWindow(true);
+		m_btn3.EnableWindow(true);
+		m_btn4.EnableWindow(true);
 		break;
 	default:
 		break;

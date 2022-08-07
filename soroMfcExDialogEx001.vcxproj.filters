@@ -48,6 +48,12 @@
     <ClInclude Include="CUserData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CListCtrlUsingSysImages.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDlgMyTrCtl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="soroMfcExDialogEx001.cpp">
@@ -72,6 +78,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CUserData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CListCtrlUsingSysImages.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDlgMyTrCtl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

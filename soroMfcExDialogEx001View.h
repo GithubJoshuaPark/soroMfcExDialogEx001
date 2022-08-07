@@ -6,10 +6,14 @@
 
 #include "CDlgForListCtrl.h"
 #include "CDlgHasUserClass.h"
+#include "CListCtrlUsingSysImages.h"
+#include "CDlgMyTrCtl.h"
 
 #define ID_BTN01 12345
 #define ID_BTN02 12346
-#define ID_CHECK_BTN01 12347
+#define ID_BTN03 12347
+#define ID_BTN04 12348
+#define ID_CHECK_BTN01 12399
 
 class CsoroMfcExDialogEx001View : public CView
 {
@@ -25,10 +29,14 @@ public:
 public:
 	CButton m_btn;
 	CButton m_btn2;
+	CButton m_btn3;
+	CButton m_btn4;
 	CButton m_check;  // for enable/disable m_btn
 
 	CDlgForListCtrl m_CDlgForListCtrl;
 	CDlgHasUserClass m_CDlgHasUserClass;
+	CListCtrlUsingSysImages m_CListCtrlUsingSysImages;
+	CDlgMyTrCtl m_CDlgMyTrCtl;
 
 // Overrides
 public:
@@ -53,12 +61,13 @@ protected:
 protected:
 	DECLARE_MESSAGE_MAP()
 public:
-	virtual BOOL Create(LPCTSTR lpszClassName, LPCTSTR lpszWindowName, DWORD dwStyle, const RECT& rect, CWnd* pParentWnd, UINT nID, CCreateContext* pContext = NULL);
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	
 private:
 	void BtnClick();
 	void Btn2Click();
+	void Btn3Click();
+	void Btn4Click();
 	void BtnChecked();
 };  
 
