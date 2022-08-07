@@ -32,6 +32,7 @@ BEGIN_MESSAGE_MAP(CsoroMfcExDialogEx001View, CView)
 	ON_COMMAND(ID_BTN02, &CsoroMfcExDialogEx001View::Btn2Click)
 	ON_COMMAND(ID_BTN03, &CsoroMfcExDialogEx001View::Btn3Click)
 	ON_COMMAND(ID_BTN04, &CsoroMfcExDialogEx001View::Btn4Click)
+	ON_COMMAND(ID_BTN05, &CsoroMfcExDialogEx001View::Btn5Click)
 	ON_COMMAND(ID_CHECK_BTN01, &CsoroMfcExDialogEx001View::BtnChecked)
 END_MESSAGE_MAP()
 
@@ -121,7 +122,8 @@ int CsoroMfcExDialogEx001View::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		(HICON)LoadImage(AfxGetApp()->m_hInstance, MAKEINTRESOURCE(IDI_ICON1), IMAGE_ICON, 48, 48, LR_DEFAULTCOLOR),
 		(HICON)LoadImage(AfxGetApp()->m_hInstance, MAKEINTRESOURCE(IDI_ICON2), IMAGE_ICON, 48, 48, LR_DEFAULTCOLOR),
 		(HICON)LoadImage(AfxGetApp()->m_hInstance, MAKEINTRESOURCE(IDI_ICON3), IMAGE_ICON, 48, 48, LR_DEFAULTCOLOR),
-		(HICON)LoadImage(AfxGetApp()->m_hInstance, MAKEINTRESOURCE(IDI_ICON4), IMAGE_ICON, 48, 48, LR_DEFAULTCOLOR)
+		(HICON)LoadImage(AfxGetApp()->m_hInstance, MAKEINTRESOURCE(IDI_ICON4), IMAGE_ICON, 48, 48, LR_DEFAULTCOLOR),
+		(HICON)LoadImage(AfxGetApp()->m_hInstance, MAKEINTRESOURCE(IDI_ICON5), IMAGE_ICON, 48, 48, LR_DEFAULTCOLOR)
 	};
 
 	m_btn.Create(_T("CDlgForListCtrl"),
@@ -157,6 +159,13 @@ int CsoroMfcExDialogEx001View::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		this,
 		ID_BTN04);
 	m_btn4.SetIcon(hIcon[3]);
+
+	m_btn5.Create(_T("ListCtls"),
+		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_ICON,
+		CRect(750, 40, 900, 150),
+		this,
+		ID_BTN05);
+	m_btn5.SetIcon(hIcon[4]);
 
 	return 0;
 }
@@ -194,6 +203,14 @@ void CsoroMfcExDialogEx001View::Btn4Click()
 	m_CDlgMyTrCtl.DoModal();
 }
 
+void CsoroMfcExDialogEx001View::Btn5Click()
+{
+	// TODO: Add your implementation code here.
+	//AfxMessageBox(_T("God will make a way"));
+
+	m_CDlgForListCtrlMove.DoModal();
+}
+
 void CsoroMfcExDialogEx001View::BtnChecked()
 {
 	// TODO: Add your control notification handler code here
@@ -205,12 +222,14 @@ void CsoroMfcExDialogEx001View::BtnChecked()
 		m_btn2.EnableWindow(false);
 		m_btn3.EnableWindow(false);
 		m_btn4.EnableWindow(false);
+		m_btn5.EnableWindow(false);
 		break;
 	case BST_UNCHECKED:
 		m_btn.EnableWindow(true);
 		m_btn2.EnableWindow(true);
 		m_btn3.EnableWindow(true);
 		m_btn4.EnableWindow(true);
+		m_btn5.EnableWindow(true);
 		break;
 	default:
 		break;

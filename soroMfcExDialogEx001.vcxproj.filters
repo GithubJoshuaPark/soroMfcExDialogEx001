@@ -54,6 +54,9 @@
     <ClInclude Include="CDlgMyTrCtl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CDlgForListCtrlMove.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="soroMfcExDialogEx001.cpp">
@@ -84,6 +87,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CDlgMyTrCtl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDlgForListCtrlMove.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -126,6 +132,18 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="..\..\..\Downloads\Anatom5-People-Disability-Walking.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\Pictures\tree-icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Tree.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\Downloads\Oxygen-Icons.org-Oxygen-Actions-window-close.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

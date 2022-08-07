@@ -1,6 +1,7 @@
 #pragma once
 #include "afxdialogex.h"
 
+#define IMAGES_CNT_FOR_TREE_NODE 7
 
 // CDlgMyTrCtl dialog
 
@@ -21,4 +22,11 @@ protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
 	DECLARE_MESSAGE_MAP()
+public:
+	CImageList m_ImageListForTreeNode;
+	CTreeCtrl m_Tree;
+	virtual BOOL OnInitDialog();
+	afx_msg void OnTvnSelchangedTree1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnBnClickedButton1();
+	void CheckupChild(HTREEITEM hItem);
 };

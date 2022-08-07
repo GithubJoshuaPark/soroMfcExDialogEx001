@@ -33,7 +33,6 @@ void CDlgForListCtrl::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CDlgForListCtrl, CDialogEx)
 	ON_BN_CLICKED(IDC_CHECK1, &CDlgForListCtrl::OnBnClickedCheck1)
 	ON_BN_CLICKED(IDC_BUTTON1, &CDlgForListCtrl::OnBnClickedButton1)
-	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST1, &CDlgForListCtrl::OnLvnItemchangedList1)
 	ON_NOTIFY(LVN_ENDLABELEDIT, IDC_LIST1, &CDlgForListCtrl::OnLvnEndlabeleditList1)
 	ON_NOTIFY(HDN_ITEMCLICK, 0, &CDlgForListCtrl::OnHdnItemclickList1)
 END_MESSAGE_MAP()
@@ -121,14 +120,6 @@ void CDlgForListCtrl::OnBnClickedButton1()
 	for (int i = nCnt; i >= 0; i--) {
 		if (m_List.GetCheck(i)) m_List.DeleteItem(i);
 	}
-}
-
-
-void CDlgForListCtrl::OnLvnItemchangedList1(NMHDR* pNMHDR, LRESULT* pResult)
-{
-	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
-	// TODO: Add your control notification handler code here
-	*pResult = 0;
 }
 
 

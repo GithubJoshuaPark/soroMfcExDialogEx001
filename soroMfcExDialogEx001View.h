@@ -8,11 +8,13 @@
 #include "CDlgHasUserClass.h"
 #include "CListCtrlUsingSysImages.h"
 #include "CDlgMyTrCtl.h"
+#include "CDlgForListCtrlMove.h"
 
 #define ID_BTN01 12345
 #define ID_BTN02 12346
 #define ID_BTN03 12347
 #define ID_BTN04 12348
+#define ID_BTN05 12349
 #define ID_CHECK_BTN01 12399
 
 class CsoroMfcExDialogEx001View : public CView
@@ -31,12 +33,14 @@ public:
 	CButton m_btn2;
 	CButton m_btn3;
 	CButton m_btn4;
+	CButton m_btn5;
 	CButton m_check;  // for enable/disable m_btn
 
 	CDlgForListCtrl m_CDlgForListCtrl;
 	CDlgHasUserClass m_CDlgHasUserClass;
 	CListCtrlUsingSysImages m_CListCtrlUsingSysImages;
 	CDlgMyTrCtl m_CDlgMyTrCtl;
+	CDlgForListCtrlMove m_CDlgForListCtrlMove;
 
 // Overrides
 public:
@@ -68,6 +72,7 @@ private:
 	void Btn2Click();
 	void Btn3Click();
 	void Btn4Click();
+	void Btn5Click();
 	void BtnChecked();
 };  
 

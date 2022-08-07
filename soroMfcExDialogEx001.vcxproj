@@ -184,6 +184,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CDlgForListCtrl.h" />
+    <ClInclude Include="CDlgForListCtrlMove.h" />
     <ClInclude Include="CDlgHasUserClass.h" />
     <ClInclude Include="CDlgMyTrCtl.h" />
     <ClInclude Include="CListCtrlUsingSysImages.h" />
@@ -199,6 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CDlgForListCtrl.cpp" />
+    <ClCompile Include="CDlgForListCtrlMove.cpp" />
     <ClCompile Include="CDlgHasUserClass.cpp" />
     <ClCompile Include="CDlgMyTrCtl.cpp" />
     <ClCompile Include="CListCtrlUsingSysImages.cpp" />
@@ -228,9 +230,13 @@
     <Image Include="..\..\..\Downloads\Anatom5-People-Disability-Glasses.ico" />
     <Image Include="..\..\..\Downloads\Anatom5-People-Disability-Reading.ico" />
     <Image Include="..\..\..\Downloads\Anatom5-People-Disability-Walking.ico" />
+    <Image Include="..\..\..\Downloads\Oxygen-Icons.org-Oxygen-Actions-window-close.ico" />
+    <Image Include="..\..\..\Pictures\tree-icon.png" />
+    <Image Include="res\bitmap2.bmp" />
     <Image Include="res\soroMfcExDialogEx001.ico" />
     <Image Include="res\soroMfcExDialogEx001Doc.ico" />
     <Image Include="res\Toolbar.bmp" />
+    <Image Include="res\Tree.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

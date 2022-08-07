@@ -32,7 +32,6 @@ public:
 	BOOL m_bAscending;
 	afx_msg void OnBnClickedCheck1();
 	afx_msg void OnBnClickedButton1();
-	afx_msg void OnLvnItemchangedList1(NMHDR* pNMHDR, LRESULT* pResult);
 	afx_msg void OnLvnEndlabeleditList1(NMHDR* pNMHDR, LRESULT* pResult);
 	static int CALLBACK CompareItem(LPARAM lParam1, LPARAM lParam2, LPARAM lParamSort);
 	void UpdateArrow();
