@@ -220,6 +220,9 @@
     <ResourceCompile Include="soroMfcExDialogEx001.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\downloads\avi1.bin" />
+    <None Include="..\..\..\downloads\avi2.bin" />
+    <None Include="..\..\..\Downloads\file_example_AVI_480_750kB.avi" />
     <None Include="res\soroMfcExDialogEx001.rc2" />
   </ItemGroup>
   <ItemGroup>

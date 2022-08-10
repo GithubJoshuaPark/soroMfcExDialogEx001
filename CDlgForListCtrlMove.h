@@ -36,6 +36,8 @@ public:
 	CButton m_CheckStatus;
 	CButton m_btn;
 
+	CPoint m_point;
+
 	int m_nIndexLeftSel;
 	virtual BOOL OnInitDialog();
 
@@ -51,4 +53,7 @@ public:
 	afx_msg void OnLvnBegindragList1(NMHDR* pNMHDR, LRESULT* pResult);
 	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
 	afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
+	CAnimateCtrl m_Avi;
+	afx_msg void OnBnClickedButton2();
+	afx_msg void OnBnClickedButton3();
 };

@@ -102,6 +102,13 @@
     <None Include="res\soroMfcExDialogEx001.rc2">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="..\..\..\downloads\avi1.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\downloads\avi2.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Downloads\file_example_AVI_480_750kB.avi" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\soroMfcExDialogEx001Doc.ico">

@@ -35,6 +35,7 @@ void CDlgForListCtrlMove::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LIST2, m_ListRight);
 	DDX_Control(pDX, IDC_CHECK1, m_CheckStatus);
 	DDX_Control(pDX, IDC_BUTTON1, m_btn);
+	DDX_Control(pDX, IDC_ANIMATE1, m_Avi);
 }
 
 
@@ -47,6 +48,8 @@ BEGIN_MESSAGE_MAP(CDlgForListCtrlMove, CDialogEx)
 	ON_NOTIFY(LVN_BEGINDRAG, IDC_LIST1, &CDlgForListCtrlMove::OnLvnBegindragList1)
 	ON_WM_MOUSEMOVE()
 	ON_WM_LBUTTONUP()
+	ON_BN_CLICKED(IDC_BUTTON2, &CDlgForListCtrlMove::OnBnClickedButton2)
+	ON_BN_CLICKED(IDC_BUTTON3, &CDlgForListCtrlMove::OnBnClickedButton3)
 END_MESSAGE_MAP()
 
 
@@ -58,6 +61,8 @@ BOOL CDlgForListCtrlMove::OnInitDialog()
 	CDialogEx::OnInitDialog();
 
 	// TODO:  Add extra initialization here
+	m_nIndexLeftSel = -1;
+
 	m_btn.SetIcon(hIcon);
 
 	m_ListLeft.InsertColumn(0, _T("Name"), LVCFMT_LEFT, 200);
@@ -117,6 +122,8 @@ BOOL CDlgForListCtrlMove::OnInitDialog()
 
 	UpdateArrow(1);
 	UpdateArrow(2);
+
+	m_Avi.Open(IDR_AVI1);
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // EXCEPTION: OCX Property Pages should return FALSE
@@ -187,6 +194,7 @@ void CDlgForListCtrlMove::OnHdnItemclickList1(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	LPNMHEADER phdr = reinterpret_cast<LPNMHEADER>(pNMHDR);
 	// TODO: Add your control notification handler code here
+	
 	if (phdr->iItem == 0)
 	{
 		m_bAscending = !m_bAscending;
@@ -258,7 +266,7 @@ void CDlgForListCtrlMove::OnBnClickedButton1()
 	}
 }
 
-
+// ¨Í
 void CDlgForListCtrlMove::OnLvnBegindragList1(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
@@ -266,23 +274,27 @@ void CDlgForListCtrlMove::OnLvnBegindragList1(NMHDR* pNMHDR, LRESULT* pResult)
 
 	CPoint ptDrag, ptAction;
 	m_nIndexLeftSel = pNMLV->iItem;
-	m_pImageListDrag = m_ListLeft.CreateDragImage(pNMLV->iItem, &ptDrag);
-	m_pImageListDrag->SetBkColor(RGB(0, 0, 0));
-	ptAction = pNMLV->ptAction;  // User clicked point
+	if (m_nIndexLeftSel >= 0) {
+		m_pImageListDrag = m_ListLeft.CreateDragImage(pNMLV->iItem, &ptDrag);
+		m_pImageListDrag->SetBkColor(RGB(0, 0, 0));
+		ptAction = pNMLV->ptAction;  // User clicked point
 
-	SetCapture();
-	m_pImageListDrag->BeginDrag(0, ptAction - ptDrag);
-	m_ListLeft.ClientToScreen(&ptAction);
-	m_pImageListDrag->DragEnter(NULL, ptAction);  // Show Drag Image 
-	                                            // NULL means that Drag image's owner is ¹ÙÅÁÈ­¸é)
+		SetCapture();
+		m_pImageListDrag->BeginDrag(0, ptAction - ptDrag);
+		m_ListLeft.ClientToScreen(&ptAction);
+		m_pImageListDrag->DragEnter(NULL, ptAction);  // Show Drag Image 
+												// NULL means that Drag image's owner is ¹ÙÅÁÈ­¸é)
+	}
+
 	*pResult = 0;
 }
 
-
+// ¨Î
 void CDlgForListCtrlMove::OnMouseMove(UINT nFlags, CPoint point)
 {
 	// TODO: Add your message handler code here and/or call default
-	if (m_pImageListDrag != NULL)
+	if (m_pImageListDrag != NULL &&
+		m_nIndexLeftSel >= 0)
 	{
 		ClientToScreen(&point);
 		CWnd* pWnd = CWnd::WindowFromPoint(point);
@@ -303,13 +315,14 @@ void CDlgForListCtrlMove::OnMouseMove(UINT nFlags, CPoint point)
 	CDialogEx::OnMouseMove(nFlags, point);
 }
 
-
+// ¨Ï
 void CDlgForListCtrlMove::OnLButtonUp(UINT nFlags, CPoint point)
 {
 	// TODO: Add your message handler code here and/or call default
 	CString ls_str = _T("");
 
-	if (m_pImageListDrag != NULL)
+	if (m_pImageListDrag != NULL &&
+		m_nIndexLeftSel >= 0)
 	{
 		ClientToScreen(&point);
 
@@ -320,8 +333,7 @@ void CDlgForListCtrlMove::OnLButtonUp(UINT nFlags, CPoint point)
 		// Add item into the right ListCtrl
 		CWnd* pWnd = CWnd::WindowFromPoint(point);
 
-		if (pWnd == &m_ListRight &&
-			m_nIndexLeftSel >= 0)
+		if (pWnd == &m_ListRight )
 		{
 			LVITEM lvItem;
 			TCHAR szBuffer[256];
@@ -371,4 +383,18 @@ void CDlgForListCtrlMove::OnLButtonUp(UINT nFlags, CPoint point)
 	}
 
 	CDialogEx::OnLButtonUp(nFlags, point);
+}
+
+
+void CDlgForListCtrlMove::OnBnClickedButton2()
+{
+	// TODO: Add your control notification handler code here
+	m_Avi.Play(0, -1, -1);
+}
+
+
+void CDlgForListCtrlMove::OnBnClickedButton3()
+{
+	// TODO: Add your control notification handler code here
+	m_Avi.Stop();
 }
