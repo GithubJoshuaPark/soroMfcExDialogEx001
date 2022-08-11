@@ -1,5 +1,6 @@
 #pragma once
 
+#define M_CUSERDATA_ID 123456
 
 // CUserData
 

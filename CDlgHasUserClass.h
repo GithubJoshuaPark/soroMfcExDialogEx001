@@ -2,7 +2,7 @@
 #include "afxdialogex.h"
 #include "CUserData.h"
 
-#define M_CUSERDATA_ID 123456
+
 // CDlgHasUserClass dialog
 
 class CDlgHasUserClass : public CDialogEx

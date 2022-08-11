@@ -57,6 +57,9 @@
     <ClInclude Include="CDlgForListCtrlMove.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CBufferDC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="soroMfcExDialogEx001.cpp">
@@ -90,6 +93,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CDlgForListCtrlMove.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CBufferDC.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

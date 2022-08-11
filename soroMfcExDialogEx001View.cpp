@@ -126,46 +126,50 @@ int CsoroMfcExDialogEx001View::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		(HICON)LoadImage(AfxGetApp()->m_hInstance, MAKEINTRESOURCE(IDI_ICON5), IMAGE_ICON, 48, 48, LR_DEFAULTCOLOR)
 	};
 
+	m_check.Create(_T("Enable/Disable"),
+		WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
+		CRect(150, 40, 300, 80),
+		this,
+		ID_CHECK_BTN01);
+
 	m_btn.Create(_T("CDlgForListCtrl"),
 		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_ICON,
-		CRect(150, 40, 300, 150),
+		CRect(150, 80, 300, 150),
 		this,
 		ID_BTN01);
 	m_btn.SetIcon(hIcon[0]);
 
-	m_check.Create(_T("Enable/Disable"),
-		WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
-		CRect(150, 160, 300, 200),
-		this,
-		ID_CHECK_BTN01);
-
 	m_btn2.Create(_T("CDlgHasUser"),
 		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_ICON,
-		CRect(300, 40, 450, 150),
+		CRect(300, 80, 450, 150),
 		this,
 		ID_BTN02);
 	m_btn2.SetIcon(hIcon[1]);
 
 	m_btn3.Create(_T("CV Using SysImg"),
 		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_ICON,
-		CRect(450, 40, 600, 150),
+		CRect(450, 80, 600, 150),
 		this,
 		ID_BTN03);
 	m_btn3.SetIcon(hIcon[2]);
 
 	m_btn4.Create(_T("CDlgMyTrCtl"),
 		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_ICON,
-		CRect(600, 40, 750, 150),
+		CRect(600, 80, 750, 150),
 		this,
 		ID_BTN04);
 	m_btn4.SetIcon(hIcon[3]);
 
 	m_btn5.Create(_T("ListCtls"),
 		WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_ICON,
-		CRect(750, 40, 900, 150),
+		CRect(750, 80, 900, 150),
 		this,
 		ID_BTN05);
 	m_btn5.SetIcon(hIcon[4]);
+
+
+	m_CUserData.Create(NULL, NULL, WS_CHILD | WS_VISIBLE | WS_BORDER,
+		CRect(150, 160, 300, 300) , this, M_CUSERDATA_ID);
 
 	return 0;
 }

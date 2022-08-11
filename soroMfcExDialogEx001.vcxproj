@@ -183,6 +183,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CBufferDC.h" />
     <ClInclude Include="CDlgForListCtrl.h" />
     <ClInclude Include="CDlgForListCtrlMove.h" />
     <ClInclude Include="CDlgHasUserClass.h" />
@@ -199,6 +200,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CBufferDC.cpp" />
     <ClCompile Include="CDlgForListCtrl.cpp" />
     <ClCompile Include="CDlgForListCtrlMove.cpp" />
     <ClCompile Include="CDlgHasUserClass.cpp" />

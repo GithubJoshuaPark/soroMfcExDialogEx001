@@ -9,6 +9,7 @@
 #include "CListCtrlUsingSysImages.h"
 #include "CDlgMyTrCtl.h"
 #include "CDlgForListCtrlMove.h"
+#include "CUserData.h"
 
 #define ID_BTN01 12345
 #define ID_BTN02 12346
@@ -29,18 +30,22 @@ public:
 
 // Operations
 public:
+	CButton m_check;  // for enable/disable m_btn
+
 	CButton m_btn;
 	CButton m_btn2;
 	CButton m_btn3;
 	CButton m_btn4;
 	CButton m_btn5;
-	CButton m_check;  // for enable/disable m_btn
+	
 
 	CDlgForListCtrl m_CDlgForListCtrl;
 	CDlgHasUserClass m_CDlgHasUserClass;
 	CListCtrlUsingSysImages m_CListCtrlUsingSysImages;
 	CDlgMyTrCtl m_CDlgMyTrCtl;
 	CDlgForListCtrlMove m_CDlgForListCtrlMove;
+	CUserData m_CUserData;
+
 
 // Overrides
 public:
