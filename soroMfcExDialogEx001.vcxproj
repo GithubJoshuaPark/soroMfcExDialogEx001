@@ -225,6 +225,7 @@
     <None Include="..\..\..\downloads\avi1.bin" />
     <None Include="..\..\..\downloads\avi2.bin" />
     <None Include="..\..\..\Downloads\file_example_AVI_480_750kB.avi" />
+    <None Include="res\file_example_AVI_480_750kB.avi" />
     <None Include="res\soroMfcExDialogEx001.rc2" />
   </ItemGroup>
   <ItemGroup>
@@ -237,10 +238,19 @@
     <Image Include="..\..\..\Downloads\Anatom5-People-Disability-Walking.ico" />
     <Image Include="..\..\..\Downloads\Oxygen-Icons.org-Oxygen-Actions-window-close.ico" />
     <Image Include="..\..\..\Pictures\tree-icon.png" />
+    <Image Include="res\Anatom5-People-Disability-Blind.ico" />
+    <Image Include="res\Anatom5-People-Disability-Cochlear.ico" />
+    <Image Include="res\Anatom5-People-Disability-Deaf.ico" />
+    <Image Include="res\Anatom5-People-Disability-Family.ico" />
+    <Image Include="res\Anatom5-People-Disability-Glasses.ico" />
+    <Image Include="res\Anatom5-People-Disability-Reading.ico" />
+    <Image Include="res\Anatom5-People-Disability-Walking.ico" />
     <Image Include="res\bitmap2.bmp" />
+    <Image Include="res\Oxygen-Icons.org-Oxygen-Actions-window-close.ico" />
     <Image Include="res\soroMfcExDialogEx001.ico" />
     <Image Include="res\soroMfcExDialogEx001Doc.ico" />
     <Image Include="res\Toolbar.bmp" />
+    <Image Include="res\tree-icon.png" />
     <Image Include="res\Tree.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

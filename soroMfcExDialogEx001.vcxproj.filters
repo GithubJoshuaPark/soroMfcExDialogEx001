@@ -115,6 +115,7 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="..\..\..\Downloads\file_example_AVI_480_750kB.avi" />
+    <None Include="res\file_example_AVI_480_750kB.avi" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\soroMfcExDialogEx001Doc.ico">
@@ -157,6 +158,33 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="..\..\..\Downloads\Oxygen-Icons.org-Oxygen-Actions-window-close.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Anatom5-People-Disability-Blind.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Anatom5-People-Disability-Cochlear.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Anatom5-People-Disability-Deaf.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Anatom5-People-Disability-Family.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Anatom5-People-Disability-Glasses.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Anatom5-People-Disability-Reading.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\tree-icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Anatom5-People-Disability-Walking.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Oxygen-Icons.org-Oxygen-Actions-window-close.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

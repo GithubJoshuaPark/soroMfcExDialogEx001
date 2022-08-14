@@ -10,6 +10,7 @@
 #include "CDlgMyTrCtl.h"
 #include "CDlgForListCtrlMove.h"
 #include "CUserData.h"
+#include "CBufferDC.h"
 
 #define ID_BTN01 12345
 #define ID_BTN02 12346
@@ -79,7 +80,10 @@ private:
 	void Btn4Click();
 	void Btn5Click();
 	void BtnChecked();
-};  
+public:
+	afx_msg void OnPaint();
+	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
+};
 
 #ifndef _DEBUG  // debug version in soroMfcExDialogEx001View.cpp
 inline CsoroMfcExDialogEx001Doc* CsoroMfcExDialogEx001View::GetDocument() const

@@ -34,6 +34,8 @@ BEGIN_MESSAGE_MAP(CsoroMfcExDialogEx001View, CView)
 	ON_COMMAND(ID_BTN04, &CsoroMfcExDialogEx001View::Btn4Click)
 	ON_COMMAND(ID_BTN05, &CsoroMfcExDialogEx001View::Btn5Click)
 	ON_COMMAND(ID_CHECK_BTN01, &CsoroMfcExDialogEx001View::BtnChecked)
+	ON_WM_PAINT()
+	ON_WM_ERASEBKGND()
 END_MESSAGE_MAP()
 
 // CsoroMfcExDialogEx001View construction/destruction
@@ -238,4 +240,34 @@ void CsoroMfcExDialogEx001View::BtnChecked()
 	default:
 		break;
 	}
+}
+
+void CsoroMfcExDialogEx001View::OnPaint()
+{
+	CPaintDC dc(this); // device context for painting
+	//CBufferDC dc(this);
+
+	// TODO: Add your message handler code here
+	// Do not call CView::OnPaint() for painting messages
+
+	CRect cRect;
+	GetClientRect(&cRect);
+	dc.FillSolidRect(&cRect, RGB(192, 0, 0));
+
+	cRect -= CRect(7, 7, 7, 7);
+	dc.SelectStockObject(NULL_PEN);
+	dc.RoundRect(&cRect, CPoint(21, 21));
+
+	dc.SetBkMode(TRANSPARENT);
+	dc.TextOutW(cRect.Width()/2, cRect.Height()/2, _T("Test String!"));
+}
+
+
+BOOL CsoroMfcExDialogEx001View::OnEraseBkgnd(CDC* pDC)
+{
+	// TODO: Add your message handler code here and/or call default
+	
+	//return TRUE;
+	
+	return CView::OnEraseBkgnd(pDC);
 }
