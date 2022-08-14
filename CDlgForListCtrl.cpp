@@ -45,8 +45,9 @@ BOOL CDlgForListCtrl::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
-	m_List.InsertColumn(0, _T("Name"), LVCFMT_LEFT, 200);
-	m_List.InsertColumn(1, _T("Desc"), LVCFMT_LEFT, 300);
+	m_List.InsertColumn(0, _T("  "), LVCFMT_LEFT, 200);
+	m_List.InsertColumn(1, _T("Name"), LVCFMT_LEFT, 200);
+	m_List.InsertColumn(2, _T("Desc"), LVCFMT_LEFT, 300);
 	m_List.ModifyStyle(LVS_TYPEMASK,LVS_REPORT);
 
 	DWORD dwSeed = ::GetTickCount();
@@ -69,6 +70,7 @@ BOOL CDlgForListCtrl::OnInitDialog()
 		//m_List.InsertItem(i, ls_str, i);
 		m_List.InsertItem(&lvItem);
 		m_List.SetItemText(i, 1, ls_str);
+		m_List.SetItemText(i, 2, ls_str);
 	}
 
 	m_List.SetImageList(&m_ImageListForNormal, LVSIL_NORMAL);
@@ -83,7 +85,9 @@ BOOL CDlgForListCtrl::OnInitDialog()
 	m_bAscending = FALSE;
 
 	m_List.SortItems(&CDlgForListCtrl::CompareItem, (DWORD_PTR)this);
-	UpdateArrow();
+	//UpdateArrow();
+
+	m_wndTest.SubclassWindow((m_List.GetHeaderCtrl())->m_hWnd);  // б╪б┘б┌ SubClassWindow
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // EXCEPTION: OCX Property Pages should return FALSE
@@ -173,15 +177,15 @@ void CDlgForListCtrl::UpdateArrow()
 	::ZeroMemory(&hdItem, sizeof(hdItem));
 	::ZeroMemory(szBuffer, 256);
 
-	hdItem.mask = -1;                             // ич
+	hdItem.mask = -1;                             // ич 
 	hdItem.pszText = szBuffer;
 	hdItem.cchTextMax = 256;
 	
 	pHeaderCtrl->GetItem(0, &hdItem);
 
-	hdItem.fmt &= ~(HDF_SORTDOWN | HDF_SORTUP);   // иш
+	hdItem.fmt &= ~(HDF_SORTDOWN | HDF_SORTUP);   // иш Reset for (HDF_SORTDOWN | HDF_SORTUP)
 
-	if (m_bAscending) hdItem.fmt |= HDF_SORTDOWN; // ищ
+	if (m_bAscending) hdItem.fmt |= HDF_SORTDOWN; // ищ 
 	else hdItem.fmt |= HDF_SORTUP;
 
 	pHeaderCtrl->SetItem(0, &hdItem);
@@ -195,7 +199,7 @@ void CDlgForListCtrl::OnHdnItemclickList1(NMHDR* pNMHDR, LRESULT* pResult)
 	if (phdr->iItem == 0)
 	{
 		m_bAscending = !m_bAscending;
-		UpdateArrow();
+		//UpdateArrow();
 		m_List.SortItems(&CDlgForListCtrl::CompareItem, (DWORD_PTR)this);
 	}
 	*pResult = 0;

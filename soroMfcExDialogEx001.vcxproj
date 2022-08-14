@@ -189,6 +189,7 @@
     <ClInclude Include="CDlgHasUserClass.h" />
     <ClInclude Include="CDlgMyTrCtl.h" />
     <ClInclude Include="CListCtrlUsingSysImages.h" />
+    <ClInclude Include="CSubClassTestWnd.h" />
     <ClInclude Include="CUserData.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MainFrm.h" />
@@ -206,6 +207,7 @@
     <ClCompile Include="CDlgHasUserClass.cpp" />
     <ClCompile Include="CDlgMyTrCtl.cpp" />
     <ClCompile Include="CListCtrlUsingSysImages.cpp" />
+    <ClCompile Include="CSubClassTestWnd.cpp" />
     <ClCompile Include="CUserData.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="pch.cpp">

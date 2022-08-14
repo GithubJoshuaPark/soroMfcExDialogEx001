@@ -1,5 +1,6 @@
 #pragma once
 #include "afxdialogex.h"
+#include "CSubClassTestWnd.h"
 
 #define IMAGES_CNT 7
 
@@ -13,6 +14,8 @@ private:
 public:
 	CDlgForListCtrl(CWnd* pParent = nullptr);   // standard constructor
 	virtual ~CDlgForListCtrl();
+
+	CSubClassTestWnd m_wndTest;
 
 // Dialog Data
 #ifdef AFX_DESIGN_TIME
