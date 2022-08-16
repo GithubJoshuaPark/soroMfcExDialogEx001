@@ -45,6 +45,7 @@ public:
 	CListCtrlUsingSysImages m_CListCtrlUsingSysImages;
 	CDlgMyTrCtl m_CDlgMyTrCtl;
 	CDlgForListCtrlMove m_CDlgForListCtrlMove;
+
 	CUserData m_CUserData;
 
 

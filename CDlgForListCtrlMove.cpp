@@ -61,6 +61,9 @@ BOOL CDlgForListCtrlMove::OnInitDialog()
 	CDialogEx::OnInitDialog();
 
 	// TODO:  Add extra initialization here
+	m_Avi.Open(IDR_AVI1);
+	m_Avi.Play(0, -1, -1);
+
 	m_nIndexLeftSel = -1;
 
 	m_btn.SetIcon(hIcon);
@@ -123,7 +126,7 @@ BOOL CDlgForListCtrlMove::OnInitDialog()
 	UpdateArrow(1);
 	UpdateArrow(2);
 
-	m_Avi.Open(IDR_AVI1);
+	
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // EXCEPTION: OCX Property Pages should return FALSE
@@ -389,12 +392,12 @@ void CDlgForListCtrlMove::OnLButtonUp(UINT nFlags, CPoint point)
 void CDlgForListCtrlMove::OnBnClickedButton2()
 {
 	// TODO: Add your control notification handler code here
-	m_Avi.Play(0, -1, -1);
+	//m_Avi.Play(0, -1, -1);
 }
 
 
 void CDlgForListCtrlMove::OnBnClickedButton3()
 {
 	// TODO: Add your control notification handler code here
-	m_Avi.Stop();
+	//m_Avi.Stop();
 }
